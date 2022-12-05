@@ -20,7 +20,11 @@ deleteButton.addEventListener("click", () => {
 
 numberButtons.forEach((button) => {
     button.addEventListener("click", (number) => {
-        if (!prevOperandText.innerText.endsWith("+")) {
+        if (!prevOperandText.innerText.endsWith("+") &&
+            !prevOperandText.innerText.endsWith("-") &&
+            !prevOperandText.innerText.endsWith("*") &&
+            !prevOperandText.innerText.endsWith("÷")
+        ) {
             prevOperandText.innerText = "";
         }
         currentOperandText.innerText += `${number.target.innerText}`;
